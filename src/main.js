@@ -65,7 +65,7 @@ const servidor = http.createServer((req, res) => {
 });
 
 // El servidor escucha en el puerto 3000
-const puerto = 3000;
+const puerto = 3000 || process.env.PORT;
 servidor.listen(puerto, () => {
   console.log(`Servidor corriendo en http://localhost:${puerto}`);
 })
