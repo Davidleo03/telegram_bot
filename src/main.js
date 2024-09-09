@@ -2,7 +2,6 @@ import { HfInference } from "@huggingface/inference";
 import { Telegraf } from "telegraf";
 
 // Cargar el módulo HTTP de Node.js
-import http from 'http'
 
 
 
