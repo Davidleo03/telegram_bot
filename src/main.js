@@ -1,7 +1,7 @@
 import { HfInference } from "@huggingface/inference";
 import { Telegraf } from "telegraf";
+import express from 'express';
 
-const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000;
 
