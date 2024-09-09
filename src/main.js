@@ -1,6 +1,11 @@
 import { HfInference } from "@huggingface/inference";
 import { Telegraf } from "telegraf";
 
+// Cargar el módulo HTTP de Node.js
+import http from 'http'
+
+
+
 
 const hf = new HfInference('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');
 const bot = new Telegraf('7281464980:AAGc3PyU1MCdrmt40W2AScXEgMtP9-D9fis');
@@ -49,3 +54,18 @@ bot.on('photo', async (ctx) => {
 bot.launch();
 
 console.log('Bot está funcionando...');
+
+// Crear un servidor
+const servidor = http.createServer((req, res) => {
+  // Configurar la cabecera de la respuesta
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  
+  // Enviar respuesta al cliente
+  res.end('Hola, Mundo desde Node.js\n');
+});
+
+// El servidor escucha en el puerto 3000
+const puerto = 3000;
+servidor.listen(puerto, () => {
+  console.log(`Servidor corriendo en http://localhost:${puerto}`);
+})
