@@ -1,8 +1,14 @@
 import { HfInference } from "@huggingface/inference";
 import { Telegraf } from "telegraf";
 
-// Cargar el módulo HTTP de Node.js
-import http from 'http'
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 
 
 
@@ -56,16 +62,6 @@ bot.launch();
 console.log('Bot está funcionando...');
 
 // Crear un servidor
-const servidor = http.createServer((req, res) => {
-  // Configurar la cabecera de la respuesta
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  
-  // Enviar respuesta al cliente
-  res.end('Hola, Mundo desde Node.js\n');
-});
-
-// El servidor escucha en el puerto 3000
-const puerto = 3000 || process.env.PORT;
-servidor.listen(puerto, () => {
-  console.log(`Servidor corriendo en http://localhost:${puerto}`);
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 })
