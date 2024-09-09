@@ -51,7 +51,7 @@ bot.on('photo', async (ctx) => {
             ctx.reply('Lo siento, no pude describir la imagen.');
         }  
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
         ctx.reply('Ha ocurrido un error')
     }       
 });
