@@ -8,7 +8,7 @@ app.use(bot.webhookCallback('/bot'))
 
 app.get('/', (req, res) => res.send('Servidor Corriendo'));
 
-bot.telegram.setWebhook('https//onrender.com');
+bot.telegram.setWebhook('https://telegram-bot-1-ce47.onrender.com');
 
 const port = 3000 || process.env.PORT;
 
