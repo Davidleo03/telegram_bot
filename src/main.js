@@ -14,7 +14,7 @@ const port = 3000 || process.env.PORT;
 
 app.listen(port, () => console.log('Server Active'))
 
-bot.telegram.setWebhook('https://telegram-bot-1-kbv2.onrender.com');
+bot.telegram.setWebhook('https://telegram-ommieye.onrender.com');
 
 
 console.log('Bot está funcionando...');
